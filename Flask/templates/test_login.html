@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login with Google</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My App</h1>
+    <button id="loginButton">Login with Google</button>
+    <div id="userInfo" style="margin-top: 20px;"></div>
+
+    <script>
+        
+        document.getElementById('loginButton').addEventListener('click', function() {
+            const currentLocation = window.location.href;  // Get the current page URL
+            const loginUrl = `https://26.14.218.21:5000/login?next=${encodeURIComponent(currentLocation)}`;
+            window.location.href = loginUrl;  // Redirect to the login page with the 'next' parameter
+        });
+
+        // Function to fetch user info from the Flask backend
+        function fetchUserInfo() {
+            fetch('https://26.14.218.21.nip.io:5000/login')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        console.error('Error fetching user data:', data.error);
+                    } else {
+                        displayUserInfo(data);
+                    }
+                })
+                .catch(error => console.error('Error fetching user data:', error));
+        }
+
+        // Function to display user info
+        function displayUserInfo(userInfo) {
+            const userInfoDiv = document.getElementById('userInfo');
+            userInfoDiv.innerHTML = `<p>Logged in as: <strong>${userInfo.name}</strong></p>
+                                     <p>Email: ${userInfo.email}</p>`;
+        }
+
+        window.onload = fetchUserInfo;  // Fetch user info when the page loads
+    </script>
+</body>
+</html>

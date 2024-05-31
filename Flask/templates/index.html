@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Book Room</title>
+    <script>
+        async function bookRoom() {
+            const roomId = document.getElementById('room_id').value;
+
+            const response = await fetch('/api/book_room', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    room_id: roomId
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(`Room booked successfully! Room ID: ${data.room_id}`);
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.error}`);
+            }
+        }
+
+        async function searchHotels() {
+            const city = document.getElementById('city').value;
+            const facilities = Array.from(document.querySelectorAll('input[name="facility"]:checked')).map(el => el.value);
+            const numPeople = document.getElementById('num_people').value;
+            const startDate = document.getElementById('start_date').value;
+            const endDate = document.getElementById('end_date').value;
+
+            const queryString = new URLSearchParams({
+                city: city,
+                num_people: numPeople,
+                start_date: startDate,
+                end_date: endDate
+            });
+
+            facilities.forEach(facility => {
+                queryString.append('facility', facility);
+            });
+
+            const response = await fetch(`/api/search_hotels?${queryString.toString()}`);
+            if (response.ok) {
+                const hotels = await response.json();
+                console.log('Hotels:', hotels);
+                // Display hotels in a suitable way (e.g., in a list or table)
+                // For simplicity, here we'll just log them to the console
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.error}`);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Search for Hotels</h1>
+    <form onsubmit="event.preventDefault(); searchHotels();">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+        <label>Facilities:</label><br>
+        <input type="checkbox" name="facility" value="Wifi"> Wifi<br>
+        <input type="checkbox" name="facility" value="Pool"> Pool<br>
+        <input type="checkbox" name="facility" value="Gym"> Gym<br><br>
+        <label for="num_people">Number of People:</label>
+        <input type="number" id="num_people" name="num_people" required><br><br>
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required><br><br>
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required><br><br>
+        <input type="submit" value="Search Hotels">
+    </form>
+
+    <h1>Book a Room</h1>
+    <form onsubmit="event.preventDefault(); bookRoom();">
+        <label for="room_id">Room ID:</label>
+        <input type="number" id="room_id" name="room_id" required><br><br>
+        <input type="submit" value="Book Room">
+    </form>
+</body>
+</html>
