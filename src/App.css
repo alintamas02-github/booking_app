@@ -1,38 +1,1258 @@
-.App {
+/* Admin.css */
+
+
+.admin-user-info .home-link {
+  color: #fff; /* Culorea iconiței */
+  text-decoration: none; /* Fără subliniere pentru link */
+  font-size: 20px; /* Mărimea iconiței */
+  margin-left: 10px; /* Margin pentru separare între nume și iconiță */
+}
+
+/* Stilizare pentru butonul de ieșire */
+.admin-user-info .home-link i {
+  margin-right: 5px; /* Margin pentru separare între iconiță și text */
+}
+
+/* Stilizare pentru nume utilizator */
+.admin-user-info h2 {
+  margin: 0;
+  font-size: 24px;
+  text-align: right; /* Aliniere la dreapta */
+}
+
+.admin-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.admin-user-info {
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.admin-user-info h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.admin-nav {
+  width: 100%;
+}
+
+.admin-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-nav ul li {
+  padding: 15px 30px; /* Increase padding for larger buttons */
+  margin-bottom: 15px; /* Increase margin for spacing between buttons */
+  text-align: center;
+  cursor: pointer;
+  background-color: #34495e;
+  border-radius: 6px; /* Make buttons slightly rounded */
+  transition: background-color 0.3s;
+}
+
+.admin-nav ul li:hover {
+  background-color: #1abc9c;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.admin-content h2 {
+  margin-top: 0;
+}
+
+.admin-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-content li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.admin-content button {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px 20px; /* Increase padding for larger buttons */
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.admin-content button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+.user-profile-container {
+  font-family: Arial, sans-serif;
+}
+
+.user-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.profile-picture {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.user-bookings {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.user-bookings h2 {
+  text-align: center;
+  color: #333;
+}
+
+.user-bookings ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-bookings li {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-bookings li p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.user-bookings button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-bookings button:hover {
+  background-color: #c0392b;
+}
+
+
+
+
+/* Stilurile pentru UserProfile */
+.user-profile-container {
+  position: relative; /* Necesar pentru a poziționa componentele copil */
+}
+
+.user-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Fundal transparent */
+  padding: 20px;
+  border-radius: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user-data h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-data p {
+  font-size: 18px;
+  color: #666;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-picture {
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+
+.hotel-search-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Mai mare cu 30% */
+  max-height: 80%; /* Mai mare cu 30% */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.hotel-search-results-container {
+  padding: 20px;
+}
+
+.hotel-list {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.hotel-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aliniați butonul "Rezervă" la dreapta */
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 100%; /* Fiecare hotel ocupă întreaga lățime */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbra gri */
+}
+
+
+.hotel-card img {
+  width: 320px; /* Dimensiunea redusă a imaginilor */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px; /* Spațiu între imagine și detalii */
+}
+
+.hotel-details {
+  flex: 1; /* Ocupă tot spațiul disponibil */
+}
+
+.hotel-details h3 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.hotel-details p {
+  margin: 5px 0;
+}
+
+.hotel-price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hotel-facilities {
+  font-size: 18px;
+  color: #666;
+}
+
+.reservation-button {
+  padding: 20px 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 15px;
+}
+
+.reservation-button:hover {
+  background: linear-gradient(to right, #0056b3, #0043a8);
+}
+
+
+
+
+
+
+
+
+.input-field {
+  width: 200px; /* Ajustați dimensiunea după preferință */
+  padding: 8px; /* Ajustați padding-ul după preferință */
+  font-size: 16px; /* Ajustați dimensiunea fontului după preferință */
+  border: 1px solid #ccc; /* Stil de bordură */
+  border-radius: 4px; /* Rotunjirea colțurilor */
+}
+
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.date-picker, .guests {
+  margin-top: 10px; /* Spațiere între diferitele câmpuri */
+}
+
+label {
+  font-weight: bold; /* Stilizare font pentru etichete */
+}
+
+
+.accommodation-search-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.accommodation-search-overlay form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accommodation-search-overlay input[type="text"],
+.accommodation-search-overlay input[type="date"],
+.accommodation-search-overlay input[type="number"] {
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accommodation-search-overlay input[type="text"]:focus,
+.accommodation-search-overlay input[type="text"]:hover,
+.accommodation-search-overlay input[type="date"]:focus,
+.accommodation-search-overlay input[type="date"]:hover,
+.accommodation-search-overlay input[type="number"]:focus,
+.accommodation-search-overlay input[type="number"]:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.accommodation-search-overlay button {
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.accommodation-search-overlay button:hover {
+  background: linear-gradient(to right, #0056b3, #0043a8);
+}
+
+.accommodation-search-overlay label {
+  font-weight: bold;
+}
+
+.accommodation-search-overlay .search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accommodation-search-overlay .date-picker,
+.accommodation-search-overlay .guests {
+  display: flex;
+  gap: 20px;
+}
+
+.accommodation-search-overlay .date-picker label,
+.accommodation-search-overlay .guests label {
+  width: 120px;
+  display: flex;
+  align-items: center; /* Centrare verticală */
+}
+
+.accommodation-search-overlay .date-picker input[type="date"],
+.accommodation-search-overlay .guests input[type="number"] {
+  width: 150px;
+}
+
+.accommodation-search-overlay .guests label {
+  margin-bottom: 5px;
+}
+
+.accommodation-search-overlay .suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accommodation-search-overlay .suggestions li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.accommodation-search-overlay .suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
+
+.mobile-indicators {
+  display: none; /* Hide by default */
+}
+
+@media (max-width: 767px) {
+  .mobile-indicators {
+    position: absolute;
+    bottom: 20px; /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* Inactive indicator color */
+    border-radius: 50%;
+    margin: 0 5px; /* Adjust the spacing between indicators as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .mobile-indicator.active {
+    background-color: #fff; /* Active indicator color */
+  }
+}
+
+.last-item.mobile-margin {
+  margin-bottom: 100px; /* Schimbă această valoare la ce dorești */
+  
+}
+.social-bar-mobile.last {
+  margin-bottom: 700px; /* Schimbă această valoare la ce dorești */
+}
+
+.social-bar-mobile {
+  
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px;
+  flex-direction: row;
+  margin-right: 150px;
+}
+
+
+.navbar.open .social-bar-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+  flex-direction: row;
+}
+
+
+.contact-social-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px; /* Adjust the margin as needed */
+  padding: 10px;
+}
+
+.contact-social-bar a {
+  margin-right: 10px; /* Adjust the spacing between social icons as needed */
+  color: #ffffff;
+  font-size: 18px;
+}
+
+@keyframes slide-up-type-in {
+  0% {
+    top: 30%;
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    top: 25%;
+    opacity: 1;
+  }
+  100% {
+    top: 25%;
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+div.additional-text {
+  font-family: 'Nunito', sans-serif; /* Asigurați-vă că aveți o fontă de rezervă */
+  position: absolute;
+  top: 25%;
+  left: 20%; /* Mențineți textul la stânga */
+  color: white;
+  font-size: 50px;
+  text-align: left; /* Alinierea textului la stânga */
+  width: 50%; /* Lățimea div-ului pentru text */
+  white-space: nowrap;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+  
+  /* Adăugați prefixele -webkit- pentru a asigura compatibilitatea cu Safari pe mobile */
+  -webkit-font-smoothing: antialiased;
+  transform: translate3d(0, 0, 0); /* Poate ajuta la evitarea artefactelor de redare */
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
+}
+
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: transparent;
+  text-align: center;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: transparent;
+  text-align: center;
+}
+
+
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1; /* Ensure the overlay is above the slideshow (z-index can be adjusted if needed) */
+}
+
+
+
+
+.each-slide-effect > div {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-size: cover;
+  height: 100vh;
+  filter: brightness(99%);
+}
+.each-slide-effect_services > div {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 90vh;
+  width: 100%; /* Lățimea imaginii este setată la 100% */
+  filter: brightness(99%);
+}
+
+/* Stilurile pentru navbar */
+.navbar {
+  font-family: 'Indie Flower', cursive;
+ 
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: flex; /* Aliniază la stânga și la dreapta */
+  align-items: center;
+ 
+  transition: background-color 0.3 ease;
+  z-index: 2;
+  
+}
+.white-line {
+  height: 2px;
+  width: 400%;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  margin-top: 40px; /* Adjust the margin as needed */
+  margin-left: -90px;
+}
+.navbar.scrolled {
+  /* Sau orice culoare doriți să o setați după ce s-a derulat peste 300px */
+  z-index:9997;
+  margin-left: -20px;
+  
+}
+.navbar_noscroll{
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: flex-end; /* Aliniază la stânga și la dreapta */
+  align-items: center;
+  padding: 10x 20px;
+ 
+ z-index: 5;
+}
+
+
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0; /* Remove default margin from the ul element */
+  padding: 0; /* Remove default padding from the ul element */
+  margin-right: 40px;
+}
+
+li {
+  margin-left: 80px; /* Adjust margin-left to create space between items on desktop */
+}
+
+
+a {
+  text-decoration: none;
   color: white;
+  font-size: 19px;
+  font-family: 'Rokkitt', sans-serif;
+  
 }
 
-.App-link {
-  color: #61dafb;
+/* Restul stilurilor pentru body și html */
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
+/* Stilurile generale pentru butoanele navbar */
+ul {
+  list-style: none;
+  display: flex;
+  font-family: "'Unna', serif";
+  
+}
+
+.logo img {
+  width: 88px;
+  margin-left:100px;
+}
+
+.menu-icon {
+  display: none; /* Hide the menu icon by default */
+ 
+  /* ... other styles */
+}
+
+
+@media (max-width: 768px) {
+  .cursor-follower {
+    display: none; /* Ascunde cursorul pe dispozitivele mobile */
+  }
+
+  div.additional-text {
+    top: auto;
+    left: auto;
+    font-size: 32px; /* Ajustează dimensiunea fontului pentru mobil */
+    margin-left: -150px;
+    margin-bottom: 200px;
+    width: 100%; /* Lățimea div-ului pentru text */
+    text-align: center; /* Alinierea textului la centru */
+    position: relative; /* Schimbă poziția la relativă */
+  }
+}
+
+@media (max-width: 768px) {
+ 
+  .cursor-follower {
+    display: none; /* Ascunde cursorul pe dispozitivele mobile */
+  }
+  
+ 
+ 
+  .each-slide-effect > div {
+    align-items: center !important; /* Center vertically on mobile */
+    text-align: center; /* Center horizontally on mobile */
+    background-position: center;
+  }
+  
+  .navbar {
+    flex-direction: row;
+    align-items: flex-start; /* Align items to the left in mobile mode */
+    justify-content: space-between; /* Align items to the right in mobile mode */
+   
+    left:0px;
+    width:100%;
+    
+  }
+ 
+ 
+  .logo {
+    order: -1; /* Schimbă ordinea pentru a muta logoul în stânga în mod mobil */
+    margin-left: 10px; /* Ajustează marginea din stânga a logoului */
+   
+  }
+
+  .logo img {
+    width: 70px;
+    margin-left: 2px;
+  }
+
+  li {
+    margin: 5px 10px; /* Adjust margin to create space between items in mobile mode */
+    font-size: 50px; /* Adjust font size for mobile */
+   
+  }
+
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 10px; /* Ajustează marginea din stânga a butonului de meniu */
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .open .menu-icon {
+    transform: rotate(90deg); /* Rotiți iconița cu 180 de grade când meniul este deschis */
+  }
+
+  /* Adaugă animație pentru butoanele deschise */
+  .navbar.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aliniază butoanele la dreapta în mod mobil */
+    margin-top: 100px;
+    
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+  }
+
+  /* Definirea animației fadeInUp */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Ascunde butoanele când meniul mobil este închis */
+  .navbar:not(.open) .nav-links {
+    display: none;
+  }
+}
+
+/* La nivel global pentru butoanele de pe desktop */
+@media (min-width: 769px) {
+  .navbar {
+    justify-content: flex-end; /* Aliniază butoanele la dreapta pe desktop */
+    font-family:'Times New Roman', Times, serif;
+  }
+
+  .nav-links {
+    margin-left: auto; /* Așază butoanele în partea dreaptă pe desktop */
+    
+  }
+}
+
+
+.slideshow-container {
+  position: relative;
+}
+
+
+.social-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 70px;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  padding: 10px;
+ 
+}
+
+/* Stilurile pentru dimensiunea iconițelor */
+.social-bar svg {
+  width: 17px; /* Modifică dimensiunea iconitelor la 30px */
+  height: auto; /* Păstrează raportul de aspect */
+}
+
+.social-bar a {
+  margin-right: 22px;
+  color: white;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.social-bar a:hover {
+  color: #cccccc;
+}
+/* Add this to your CSS file or apply inline styles */
+.react-slideshow-container .each-slide .indicator > div {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  margin: 0 5px; /* Adjust the margin as needed */
+  background-color: #fff; /* Indicator background color */
+  border: 2px solid #333; /* Indicator border style */
+  border-radius: 50%; /* Optional: Make the indicators circular */
+}
+
+.cursor-follower {
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.3s, width 0.3s, height 0.3s;
+}
+
+.cursor-follower.pressed {
+  transform: scale(1.5); /* Crește dimensiunea când butonul de mouse este apăsat */
+}
+
+.cursor-content {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.cursor-arrows {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.cursor-follower.pressed {
+  transform: scale(1.5); /* Crește dimensiunea când butonul de mouse este apăsat */
+}
+
+@media (min-width: 768px) {
+  .cursor-follower {
+    display: block; /* Afișat pe desktop */
+  }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Set the container to full height of the viewport */
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #1e1e1e;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+
+/*Services-------------------------------------------------------*/
+
+
+.ag-format-container {
+  width: 1500px;
+  
+  margin: 0 auto;
+}
+
+
+
+.ag-courses_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  padding: 300px 0;
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+
+  overflow: hidden;
+
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 0 0 25px;
+
+  overflow: hidden;
+
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #FFFFFF;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+  background-color: #FFFFFF;
+ 
+  
+}
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+  background-color: #FFFFFF;
+ 
+}
+.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+  background-color: #FFFFFF;
+ 
+}
+.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+  background-color: #FFFFFF;
+}
+.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+  background-color: #FFFFFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_title,
+.ag-courses-item_link:hover .ag-courses-item_description {
+  color: #000; /* Schimbarea culorii la hover */
+}
+
+
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
+  .ag-courses_box{
+    padding : 100px 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+  .ag-courses_box{
+    padding : 100px 0px;
+  }
+  .ag-courses-item_link {
+    
+    pointer-events: none;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    
+    pointer-events: none;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+  .ag-courses_box{
+    padding : 100px 0px;
+  }
+}
+
+/* CSS */
+.button-27 {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin:50px;
+  
+  min-height: 40px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.button-27:disabled {
+  pointer-events: none;
+}
+
+.button-27:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-27:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/*----------------------*/
+.slide-container {
+  position: relative;
+  margin-top: 90px;
+  width: 100%;
+}
+
+
+.each-slide-services img {
+  transition: all 0.5s ease-in-out; /* Smooth transition for the image */
+}
+
+.each-slide-services.dimmed .slide-image {
+  filter: brightness(40%); /* Apply brightness only to the image */
+}
+
+
+.each-slide-services {
+  height: 400px; /* Set a fixed height for the slides */
+  position: relative; /* Context for absolute positioning */
+  transition: all 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+}
+
+
+.each-slide-services > div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+
+.text-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  z-index: 2; /* Above the slide image */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Enhance readability */
+  left:50px;
+  bottom:50px;
+  z-index: 5;
+}
+
+.text-overlay h2 {
+  font-size: 2em; /* Adjust size as needed */
+}
+
+.text-overlay button {
+  padding: 15px 30px; /* Larger padding for a bigger button */
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* White text */
+  border: 2px solid #fff; /* White border */
+  border-radius: 12px;
+  font-size: 1em; /* Appropriate font size */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold font */
+  letter-spacing: 1px; /* Spacing between letters */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for a hover effect */
+  outline: none; /* Remove the focus outline */
+  cursor: pointer; /* Cursor to indicate it's clickable */
+  z-index: 10;
+}
+
+.text-overlay button:hover {
+  background-color: #fff; /* White background on hover */
+  color: #000; /* Black text on hover */
+}
+
+/* StagesOfWork.css */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.textContainer {
+  margin-top: 100px;
+  font-family: 'Arial, sans-serif';
+  color: white;
+  width: 100%;
+  margin-left: 50px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .textContainer {
+    width: 50%; /* Asumând că textul ocupă aproximativ 60% din lățimea totală */
+    text-align: left;
+  }
+}
+
+/* ...restul stilurilor... */
+
+.imageContainer {
+  width: 80%;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .imageContainer {
+    width: 40%; /* Asumând că imaginea ocupă aproximativ 40% din lățimea totală */
+  }
+}
+
+.image-stage {
+  max-width: 100%;
+  height: auto;
+}
+
